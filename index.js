@@ -5,6 +5,7 @@ import cors from "cors";
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+var PORT = process.env.PORT || 5000;
 
 let items = [];
 let discountCodes = [];
@@ -76,6 +77,6 @@ app.get("/orderSummary", (req, res) => {
   });
 });
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
   console.log("Server started on port 5000");
 });
